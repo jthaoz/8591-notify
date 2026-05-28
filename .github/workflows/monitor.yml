@@ -10,6 +10,9 @@ jobs:
     name: 偵測（帳號 ${{ matrix.account }}）
     runs-on: ubuntu-latest
     timeout-minutes: 4
+    defaults:
+      run:
+        working-directory: 8591-notify-v2
     strategy:
       fail-fast: false
       matrix:
@@ -26,7 +29,7 @@ jobs:
       - name: 還原通知狀態
         uses: actions/cache/restore@v4
         with:
-          path: ./state
+          path: 8591-notify-v2/state
           key: notify-state-account${{ matrix.account }}-${{ github.run_id }}
           restore-keys: |
             notify-state-account${{ matrix.account }}-
@@ -42,5 +45,5 @@ jobs:
         uses: actions/cache/save@v4
         if: always()
         with:
-          path: ./state
+          path: 8591-notify-v2/state
           key: notify-state-account${{ matrix.account }}-${{ github.run_id }}
