@@ -23,8 +23,8 @@ export async function scrape(page) {
 
   // 等待頁面完全載入（含 API 資料）
   await page.goto(config.site.url, {
-    waitUntil: 'networkidle',
-    timeout: 45_000,
+    waitUntil: 'domcontentloaded',
+    timeout: 30_000,
   });
 
   // 額外等待動態內容渲染
