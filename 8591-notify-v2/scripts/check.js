@@ -54,14 +54,13 @@ async function main() {
     const { badges, hasChatMessage } = await scrape(page);
 
     // ── 聊聊訊息 ─────────────────────────────────────────────
-    if (shouldNotifyChat(hasChatMessage)) {
+    if (hasChatMessage) {
       await sendMessage(
         `💬 <b>8591 賣場 — 新聊聊訊息${tag}</b>\n\n` +
         `您有新的訊息，請盡快回覆買家！`
       );
       log.ok('已發送聊聊通知');
     }
-    await setChatState(hasChatMessage);
 
     // ── Badge 通知 ────────────────────────────────────────────
     const currentHrefs = new Set(badges.map(b => b.href));
