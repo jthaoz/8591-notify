@@ -1,1 +1,56 @@
 
+name: 8591 通知監控
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check:
+    name: 偵測（帳號 ${{ matrix.account }}）
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+
+    strategy:
+      fail-fast: false
+      matrix:
+        account: [1, 2, 3]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 安裝套件
+        run: npm install
+
+      - name: 安裝 Chromium
+        run: npx playwright install chromium --with-deps
+
+      - name: 還原通知狀態（帳號 ${{ matrix.account }}）
+        uses: actions/cache/restore@v4
+        with:
+          path: ./state
+          key: notify-state-account${{ matrix.account }}-${{ github.run_id }}
+          restore-keys: |
+            notify-state-account${{ matrix.account }}-
+
+      - name: 執行監控（帳號 ${{ matrix.account }}）
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SITE_URL: ${{ secrets.SITE_URL }}
+          SESSION_JSON: ${{ secrets[format('SESSION_JSON_{0}', matrix.account)] }}
+          ACCOUNT_NAME: ${{ secrets[format('ACCOUNT_NAME_{0}', matrix.account)] }}
+        run: node scripts/check.js
+
+      - name: 儲存通知狀態（帳號 ${{ matrix.account }}）
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: ./state
+          key: notify-state-account${{ matrix.account }}-${{ github.run_id }}
