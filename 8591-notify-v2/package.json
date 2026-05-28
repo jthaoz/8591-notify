@@ -1,0 +1,17 @@
+{
+  "name": "8591-notify",
+  "version": "1.0.0",
+  "description": "8591 賣場通知 → Telegram",
+  "type": "module",
+  "scripts": {
+    "login": "node scripts/login.js",
+    "test-run": "node scripts/check.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "playwright": "^1.44.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

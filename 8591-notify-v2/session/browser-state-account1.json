@@ -1,0 +1,406 @@
+{
+  "cookies": [
+    {
+      "name": "webp",
+      "value": "1",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "mono-wwwv1",
+      "value": "default-tw8591-monorepo-www-master-80",
+      "domain": "www.8591.com.tw",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "mono-www",
+      "value": "dd09675a9547317c",
+      "domain": "www.8591.com.tw",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "imei",
+      "value": "d7a8b6c7-5509-46e0-9040-fba386318611",
+      "domain": "www.8591.com.tw",
+      "path": "/",
+      "expires": 1811475613.404389,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "CLID",
+      "value": "8eec0591dcda4098b169079290872691.20260528.20270528",
+      "domain": "www.clarity.ms",
+      "path": "/",
+      "expires": 1811475613.833584,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1747661385.1779939614",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": 1814499614.042427,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__gads",
+      "value": "ID=13e832c5294a30bf:T=1779939613:RT=1779939613:S=ALNI_MZTGF67hBO1bokwD2oyIEy8IfSZMQ",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": 1813635613,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__gpi",
+      "value": "UID=000013aba60807f9:T=1779939613:RT=1779939613:S=ALNI_MZWxTQsXqfZPpYSkGTtEkU4yqstvg",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": 1813635613,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__eoi",
+      "value": "ID=1896fc9b7998a824:T=1779939613:RT=1779939613:S=AA-AfjZpLlJ_nPnMmCnwY9-dzUTq",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": 1795491613,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__lt__cid",
+      "value": "075881c5-9df5-47b8-9179-d0cedbabf00c",
+      "domain": ".www.8591.com.tw",
+      "path": "/",
+      "expires": 1814499621.791534,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__lt__sid",
+      "value": "e8ea822d-bf1ce844",
+      "domain": ".www.8591.com.tw",
+      "path": "/",
+      "expires": 1779941421,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "IDE",
+      "value": "AHWqTUlq0L-fCchBFuTs2UBi7npmOuXSsqQAOkSGIXbHgD2BVUT99hvmIZ_UkWJbmOE",
+      "domain": ".doubleclick.net",
+      "path": "/",
+      "expires": 1814499614.10548,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "GCLB",
+      "value": "CLK0w7jRkfqbrwEQAw",
+      "domain": "profiles.dunsregistered.com",
+      "path": "/",
+      "expires": 1780026013.196465,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "i_izSKUMMW95ZMZrsABHuzmSZSdNy6RLzSyOH1KB5t4-1779939613.5543118-1.0.1.1-H3MAyvYK9Cz_pIEyFMHr835lWtgHwnUbDzarA0iiqH2DZ4WO8BwiRUQ_CfGY5g9nVskYzRUFtiufOtZcVV9wmYtKhV60Saz9_hehbrnbb8tJNZq_P4uWuRFrxFPFaL2G",
+      "domain": ".profiles.dunsregistered.com",
+      "path": "/",
+      "expires": 1779941414.196519,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ldbrbid",
+      "value": "tr__k1y/XGoXuR4zYb+AZGYkAg==",
+      "domain": ".line.me",
+      "path": "/",
+      "expires": 1814499621.846436,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.908183092.1779939614",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": 1787715614,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_fbp",
+      "value": "fb.2.1779939614373.991464258311570669",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": 1787715621,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_clck",
+      "value": "1t3anv9%5E2%5Eg6f%5E0%5E2339",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": 1811475614,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "MUID",
+      "value": "184F0A728024602833451D1581906150",
+      "domain": ".bing.com",
+      "path": "/",
+      "expires": 1813635614.974134,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "MR",
+      "value": "0",
+      "domain": ".c.bing.com",
+      "path": "/",
+      "expires": 1780544414.974204,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "SRM_B",
+      "value": "184F0A728024602833451D1581906150",
+      "domain": ".c.bing.com",
+      "path": "/",
+      "expires": 1813635614.974222,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "SM",
+      "value": "C",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "MUID",
+      "value": "184F0A728024602833451D1581906150",
+      "domain": ".clarity.ms",
+      "path": "/",
+      "expires": 1813635615.025071,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "MR",
+      "value": "0",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": 1780544415.025134,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ANONCHK",
+      "value": "0",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": 1779940215.02517,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "access_token",
+      "value": "Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyNTc1MTYwIiwiZXhwIjoxNzc5OTQzMjIwLCJuYmYiOjE3Nzk5Mzk2MjAsImlhdCI6MTc3OTkzOTYyMCwianRpIjoiYTM0ZDRlNmMtYzJkMS00ZjEyLTlhYWEtMWNkNDM2MmNjMjk1In0.7t-wiQ_DVumgeQLZn6b0_f4bNwrE-XIr7vLYRf99rlw",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "PHPSESSID",
+      "value": "1ac0ae417e765d802cd2a7a4075ad27e334de84b",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "abc",
+      "value": "GwPgqrGEnGG1RtSAhs76%2BQ47%2FmHEdP9amYA",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "login_encrypt",
+      "value": "2575160",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "v3login",
+      "value": "1",
+      "domain": "www.8591.com.tw",
+      "path": "/",
+      "expires": 1780026023.05127,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "v3login",
+      "value": "1",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "testenv",
+      "value": "traefik",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_5G0TRF3C4C",
+      "value": "GS2.1.s1779939614$o1$g1$t1779939621$j53$l0$h0",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": 1814499621.75301,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_Y1GQYKZVWT",
+      "value": "GS2.1.s1779939614$o1$g1$t1779939621$j53$l0$h0",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": 1814499621.808048,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_clsk",
+      "value": "15rcefl%5E1779939622158%5E3%5E1%5Ex.clarity.ms%2Fcollect",
+      "domain": ".8591.com.tw",
+      "path": "/",
+      "expires": 1780026022,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://www.8591.com.tw",
+      "localStorage": [
+        {
+          "name": "lastExternalReferrerTime",
+          "value": "1779939614365"
+        },
+        {
+          "name": "burial-point-lock",
+          "value": "0"
+        },
+        {
+          "name": "__lt__cid",
+          "value": "075881c5-9df5-47b8-9179-d0cedbabf00c"
+        },
+        {
+          "name": "im_shared",
+          "value": "{\"triggering\":1779939622575}"
+        },
+        {
+          "name": "commonMenu",
+          "value": "1"
+        },
+        {
+          "name": "lastExternalReferrer",
+          "value": "empty"
+        },
+        {
+          "name": "burial-point-event",
+          "value": "[{\"user_id\":\"d7a8b6c7-5509-46e0-9040-fba386318611\",\"operation_time\":\"1779939616132\",\"type\":\"click\",\"page\":\"home\",\"module\":\"home\",\"func\":\"typeNav\",\"event\":\"home_home_typeNav_click\",\"data\":{\"type\":\"會員中心\"}},{\"user_id\":\"d7a8b6c7-5509-46e0-9040-fba386318611\",\"operation_time\":\"1779939616170\",\"type\":\"view\",\"page\":\"home\",\"module\":\"home\",\"func\":\"page\",\"event\":\"home_home_page_view\",\"data\":{\"timer\":2305,\"source\":\"0\",\"link\":\"https://www.8591.com.tw/v3/user/login?redirect=%2Fv3%2Fdashboard\"}},{\"user_id\":\"d7a8b6c7-5509-46e0-9040-fba386318611\",\"operation_time\":\"1779939617516\",\"type\":\"click\",\"page\":\"login\",\"module\":\"home\",\"func\":\"loginMethod\",\"event\":\"login_home_loginMethod_click\",\"data\":{\"type\":\"phone\"}},{\"user_id\":\"d7a8b6c7-5509-46e0-9040-fba386318611\",\"operation_time\":\"1779939621438\",\"type\":\"view\",\"page\":\"login\",\"module\":\"home\",\"func\":\"page\",\"event\":\"login_home_page_view\",\"data\":{\"timer\":5287,\"source\":\"0\",\"link\":\"paused\"}}]"
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"timeouts\":0,\"errors\":0,\"eopCount\":0,\"creationTimeMs\":1779939614317},\"expires\":1787715614317}}"
+        },
+        {
+          "name": "router-history-store",
+          "value": "[\"/\",\"/v3/user/login?redirect=%2Fv3%2Fdashboard\",\"/v3/dashboard\"]"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.google.com",
+      "localStorage": [
+        {
+          "name": "rc::h",
+          "value": "1779939614771"
+        }
+      ]
+    }
+  ]
+}
