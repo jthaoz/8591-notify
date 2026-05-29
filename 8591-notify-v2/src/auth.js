@@ -1,22 +1,12 @@
-/**
- * auth.js — 啟動 Playwright 並載入 Session
- *
- * Session 來源優先順序：
- *   1. SESSION_JSON 環境變數（base64）← GitHub Actions 用這個
- *   2. session/browser-state.json 檔案   ← 本機開發用
- */
 import { chromium } from 'playwright';
 import fs from 'fs/promises';
-import path from 'path';
 import config from './config.js';
 import log from './logger.js';
 
 const SESSION_FILE = './session/browser-state.json';
+// 自動延長用的 session 快取（存在 state 目錄，會被 GitHub cache 保留）
+const SESSION_CACHE = './state/session.json';
 
-/**
- * 啟動瀏覽器並套用 session，回傳 { browser, page }
- * @returns {Promise<{ browser: import('playwright').Browser, page: import('playwright').Page }>}
- */
 export async function launch() {
   log.info('啟動 Chromium（headless）...');
 
@@ -30,22 +20,28 @@ export async function launch() {
     ],
   });
 
-  // ── 決定 session 來源 ────────────────────────────────────
   let storageState = undefined;
 
-  if (config.sessionJson) {
-    // GitHub Actions：SESSION_JSON 是 base64 字串
-    log.info('從環境變數載入 Session（GitHub Actions 模式）');
-    const json = Buffer.from(config.sessionJson, 'base64').toString('utf-8');
-    storageState = JSON.parse(json); // 直接傳物件給 Playwright
-  } else {
-    // 本機：從檔案讀
-    try {
-      await fs.access(SESSION_FILE);
-      storageState = SESSION_FILE;
-      log.info(`從檔案載入 Session：${SESSION_FILE}`);
-    } catch {
-      log.warn('找不到 session 檔案，請先執行 npm run login');
+  // 優先順序：1. 快取的最新 session → 2. SESSION_JSON secret → 3. 本機檔案
+  let loadedFromCache = false;
+  try {
+    const cached = await fs.readFile(SESSION_CACHE, 'utf-8');
+    storageState = JSON.parse(cached);
+    loadedFromCache = true;
+    log.info('從快取載入最新 Session（自動延長）');
+  } catch {
+    if (config.sessionJson) {
+      log.info('從環境變數載入 Session（首次或快取遺失）');
+      const json = Buffer.from(config.sessionJson, 'base64').toString('utf-8');
+      storageState = JSON.parse(json);
+    } else {
+      try {
+        await fs.access(SESSION_FILE);
+        storageState = SESSION_FILE;
+        log.info(`從檔案載入 Session：${SESSION_FILE}`);
+      } catch {
+        log.warn('找不到 session，請先執行 npm run login');
+      }
     }
   }
 
@@ -60,25 +56,38 @@ export async function launch() {
     timezoneId: 'Asia/Taipei',
   });
 
-  // 隱藏自動化特徵
   await context.addInitScript(() => {
     Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
   });
 
   const page = await context.newPage();
-  return { browser, page };
+  return { browser, context, page, loadedFromCache };
 }
 
-/**
- * 檢查頁面是否仍在登入狀態
- * @param {import('playwright').Page} page
- */
+// 把最新的 cookies 存到快取，下次優先使用
+export async function saveSession(context) {
+  try {
+    await fs.mkdir('./state', { recursive: true });
+    const state = await context.storageState();
+    await fs.writeFile(SESSION_CACHE, JSON.stringify(state));
+    log.info('已儲存最新 Session（自動延長成功）');
+  } catch (e) {
+    log.warn('儲存 Session 失敗：', e.message);
+  }
+}
+
+// session 過期時刪除快取，下次回頭用 SESSION_JSON secret（你重登後更新的）
+export async function clearCachedSession() {
+  try {
+    await fs.unlink(SESSION_CACHE);
+    log.info('已清除過期的快取 Session');
+  } catch { /* 沒有快取就忽略 */ }
+}
+
 export async function isLoggedIn(page) {
   try {
     const url = page.url();
-    // 8591 登入頁通常含有 login 字樣
     if (url.includes('login') || url.includes('signin')) return false;
-    // 等待賣場特有元素
     await page.waitForSelector(
       '[class*="seller"], [class*="dashboard"], [class*="sidebar"], nav',
       { timeout: 8_000 }
